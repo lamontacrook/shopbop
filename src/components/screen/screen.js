@@ -53,7 +53,9 @@ const Screen = () => {
           ))}
         </div>
       ))}
-      <Footer />
+      <footer>
+        <Footer key='footer'/>
+      </footer>
     </React.Fragment>
   );
 };
