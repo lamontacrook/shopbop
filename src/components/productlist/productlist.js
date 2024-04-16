@@ -73,6 +73,12 @@ const ProductList = ({ content, editorProps }) => {
     );
   };
 
+  const productProps = {
+    'data-aue-prop': 'products',
+    'data-aue-type': 'reference',
+    'data-aue-label': 'Products'
+  };
+
   return (
     <div className='productlist' {...editorProps}>
       <div className='product-list-title'>
@@ -81,7 +87,7 @@ const ProductList = ({ content, editorProps }) => {
       </div>
       <div className='list-items'>
         {products && content.products && content.products.map((product) => (
-          <div key={product} className='list-item'>
+          <div key={product} className='list-item' {...productProps}>
             {retrieveProduct(product)}
           </div>
         ))}

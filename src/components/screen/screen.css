@@ -104,12 +104,14 @@
 
 :root {
   --font-family: GTAmerica, "Helvetica Neue", Helvetica, sans-serif;
-
+  --font-size: 14px;
 
   /* navigation */
   --nav-font-family: var(--font-family);
-  --nav-font-size: 14px;
+  --nav-font-size: var(--font-size);
   --nav-line-height: 1.285;
   --nav-font-weight: 400;
   --nav-font-weight-bold: 700;
+
+  --product-list-font-size: var(--nav-font-size);
 }
