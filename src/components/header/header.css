@@ -34,7 +34,7 @@
 
 .header-wrapper .info-bar-wrapper .info-bar .metadata button:hover {
 	font-weight: 700;
-	transition: all 225ms ease 0s;; 
+	transition: all 225ms ease 0s;
 }
 
 .header-wrapper .info-bar-wrapper .info-bar .metadata button::after {
