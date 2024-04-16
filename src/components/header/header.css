@@ -30,7 +30,11 @@
 	position: relative;
 	padding: 0 20px 0 2px;
 	margin-right: 2px;
+}
 
+.header-wrapper .info-bar-wrapper .info-bar .metadata button:hover {
+	font-weight: 700;
+	transition: all 225ms ease 0s;; 
 }
 
 .header-wrapper .info-bar-wrapper .info-bar .metadata button::after {
@@ -67,9 +71,9 @@
 
 .header-wrapper .info-bar-wrapper .info-bar .prime-banner {
 	grid-column: 5 / span 4;
-	border: solid 2px orange;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .header-wrapper .info-bar-wrapper .info-bar .prime-banner span {
@@ -86,13 +90,42 @@
 
 .header-wrapper .info-bar-wrapper .info-bar .prime-banner img {
 	width: 90px;
+	margin-left: 10px;
 }
 
 .header-wrapper .info-bar-wrapper .info-bar .account {
-	border: solid 2px lime;
 	grid-column: 10 / span 3;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
+.header-wrapper .info-bar-wrapper .info-bar .account .login {
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .account .login:hover {
+	font-weight: 700;
+	transition: all 225ms ease 0s;;
+	cursor: pointer;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .account button {
+	border: none;
+	background: none;
+	position: relative;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .account .bag {
+	padding: 13px 0 13px 28px;
+	font-size: 16px;
+	margin-left: 3px;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .account .favorites {
+	width: 50px;
+}
 
 .header-wrapper .info-bar-wrapper .info-bar .account .favorites::before{
 	display: block;
@@ -103,22 +136,34 @@
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-image: url('../../media/filled-heart.svg');
+	margin: 0 auto;
 }
-
 
 .header-wrapper .info-bar-wrapper .info-bar .account .bag::before{
 	display: block;
 	content: "";
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 27px;
 	background-position: center center;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-image: url('../../media/bag.svg');
+	position: absolute;
+	bottom: 11px;
+	left: 5px;
 }
 
+.header-wrapper .info-bar-wrapper .info-bar .account .bag:hover::before {
+	width: 21px;
+	height: 27px;
+	transition: all 225ms ease 0s;
+}
 
-
+.header-wrapper .info-bar-wrapper .info-bar .account .favorites:hover::before {
+	width: 24.5px;
+	height: 25px;
+	transition: width 225ms ease 0s;
+}
 
 .header-wrapper .logo-wrapper a {
 	display: inline-block;

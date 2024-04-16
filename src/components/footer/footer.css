@@ -52,7 +52,7 @@
 
 .footer-content-wrapper > .footer-navigation > nav > ul > li > a:hover {
     font-weight: 700;
-    transition: all 0.2s ease-out;
+    transition: all 225ms ease 0s;;
 }
 
 .footer-content-wrapper > .footer-copyright {

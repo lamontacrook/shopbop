@@ -11,6 +11,6 @@ code {
 }
 
 button:hover {
-  transition: all 0.2s ease-in;
+  transition: all 225ms ease 0s;
   cursor: pointer;
 }
