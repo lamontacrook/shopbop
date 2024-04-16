@@ -4,13 +4,14 @@
   align-items: center;
   padding: 30px 40px;
   max-width: 1375px;
+  width: calc(100vw - 80px);
 }
 
 .main-body > .imagelist h3 {
   font-family: "franklin gothic", sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  margin: 30px 0 0;
+  margin: 30px 0;
 }
 
 .main-body > .imagelist > .list-items {

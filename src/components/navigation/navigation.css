@@ -63,7 +63,7 @@ header>nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 header > nav ul > li > ul {
