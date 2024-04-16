@@ -1,4 +1,5 @@
 import React from 'react';
+import OptOutIcon from '../../media/opt-out-icon.png';
 
 import './footer.css';
 const footerContent = [
@@ -133,10 +134,10 @@ const Footer = () => {
         <span>
           © 1999-2024 BOP LLC. All Rights Reserved.
         </span>
-        <div>
+        <div className='copyright-links'>
           <a>Privacy Notice</a>
           <a>Conditions of Use</a>
-          <span><a>Your Ads Privacy Choices</a></span>
+          <span className='link-icon'><img src={OptOutIcon} /><a>Your Ads Privacy Choices</a></span>
         </div>
       </div>
 
