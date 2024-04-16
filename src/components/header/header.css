@@ -1,0 +1,131 @@
+.header-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header-wrapper .info-bar-wrapper {
+	width: 100%;
+	background: rgb(248, 247, 247);
+}
+
+.header-wrapper .info-bar-wrapper .info-bar {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	max-width: 1200px;
+	height: 45px;
+	margin: 0 auto;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .metadata {
+	grid-column: 1/ span 3;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .metadata button {
+	border: none;
+	background: none;
+	position: relative;
+	padding: 0 20px 0 2px;
+	margin-right: 2px;
+
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .metadata button::after {
+	display: block;
+	content: "";
+	width: 18px;
+	height: 16px;
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url('../../media/down-carat.svg');
+	position: absolute;
+	bottom: -1px;
+	right: 2px;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .metadata .location {
+	padding-left: 20px;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .metadata .location::before{
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url('../../media/location.svg');
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .prime-banner {
+	grid-column: 5 / span 4;
+	border: solid 2px orange;
+	display: flex;
+	align-items: center;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .prime-banner span {
+	position: relative;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .prime-banner span::after {
+	content: '';
+	/* position: absolute; */
+	height: 10px;
+	width: 1px;
+	background-color: black;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .prime-banner img {
+	width: 90px;
+}
+
+.header-wrapper .info-bar-wrapper .info-bar .account {
+	border: solid 2px lime;
+	grid-column: 10 / span 3;
+}
+
+
+.header-wrapper .info-bar-wrapper .info-bar .account .favorites::before{
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url('../../media/filled-heart.svg');
+}
+
+
+.header-wrapper .info-bar-wrapper .info-bar .account .bag::before{
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-position: center center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url('../../media/bag.svg');
+}
+
+
+
+
+.header-wrapper .logo-wrapper a {
+	display: inline-block;
+	width: 180px;
+	padding: 27px 0 16px;
+}
+
+.header-wrapper .logo-wrapper img {
+	width: 100%;
+}
