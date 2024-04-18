@@ -5,7 +5,9 @@ import { useErrorHandler } from 'react-error-boundary';
 import { AppContext } from '../../utils/context';
 import { Helmet } from 'react-helmet-async';
 import Delayed from '../../utils/delayed';
+import Header from '../header';
 import Navigation from '../navigation';
+import Footer from '../footer';
 import { useGraphQL } from '../../utils/useGraphQL';
 import Loading from '../loading';
 import Banner from '../../components/banner';
@@ -36,6 +38,7 @@ const Screen = () => {
         <title>Shopbop {title}</title>
       </Helmet>
       <header>
+        <Header key='header' />
         <Navigation key='navigation' />
       </header>
 
@@ -53,7 +56,7 @@ const Screen = () => {
         </div>
       ))}
       <footer>
-
+        <Footer key='footer'/>
       </footer>
     </React.Fragment>
   );

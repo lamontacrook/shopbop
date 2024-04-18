@@ -1,5 +1,5 @@
 header>nav ul>li {
-  padding: 6px 11px;
+  padding: 0 11px;
   position: relative;
 }
 
@@ -62,11 +62,26 @@ header > nav ul > li > h4 > a:hover {
 header>nav ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header > nav ul > li > ul {
   display: none;
+}
+
+header>nav .search {
+  width: 18px;
+  margin-left: 8px;
+}
+
+header>nav .search:hover {
+  width: 21px;
+  transition: all 225ms ease 0s;
+  cursor: pointer;
 }
 
 /*header nav ul > li a::after {

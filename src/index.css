@@ -9,3 +9,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button:hover {
+  transition: all 225ms ease 0s;
+  cursor: pointer;
+}

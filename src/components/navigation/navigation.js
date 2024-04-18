@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useGraphQL } from '../../utils/useGraphQL';
 import Loading from '../loading';
 import Panel from '../panel';
+import Search from '../../media/search.svg';
 
 import './navigation.css';
 
@@ -60,7 +61,9 @@ const Navigation = () => {
         <div className='navigation' role='menubar' key={nav._path}>
           <ul>
             {changeHTML(nav.navigationItems.html)}
+            <img className='search' src={Search} />
           </ul>
+
         </div>
       ))}
       <Panel style={style} panel={panel} />

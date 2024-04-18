@@ -63,23 +63,29 @@ const ProductList = ({ content, editorProps }) => {
     return (
       <React.Fragment>
         <img src={product.category_image} />
-        <span className='product-name'>{product.product_name}</span>
-        <span className='product-description'>{product.product_description}</span>
-        <span className='product-price'>{product.product_price}</span>
+        <div className='list-item-content'> 
+          <span className='product-name'>{product.product_name}</span>
+          <span className='product-description'>{product.product_description}</span>
+          <span className='product-price'>{product.product_price}</span>
+          <button aria-label="button" className='product-favorite'></button>
+        </div>
       </React.Fragment>
     );
   };
 
   return (
     <div className='productlist' {...editorProps}>
-      {mapJsonRichText(content?.headline?.json)}
-      <span className='list-items'>
+      <div className='product-list-title'>
+        {mapJsonRichText(content?.headline?.json)}
+        <button className="shop-all" aria-label="button">Shop All</button>
+      </div>
+      <div className='list-items'>
         {products && content.products && content.products.map((product) => (
           <div key={product} className='list-item'>
             {retrieveProduct(product)}
           </div>
         ))}
-      </span>
+      </div>
     </div>
   );
 };

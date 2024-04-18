@@ -99,6 +99,7 @@
 
 .main-body {
   max-width: 1496px;
+  margin:auto;
 }
 
 :root {
@@ -109,6 +110,6 @@
   --nav-font-family: var(--font-family);
   --nav-font-size: 14px;
   --nav-line-height: 1.285;
-  --nav-font-weight: 300;
+  --nav-font-weight: 400;
   --nav-font-weight-bold: 700;
 }
