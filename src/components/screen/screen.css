@@ -99,6 +99,7 @@
 
 .main-body {
   max-width: 1496px;
+  margin:auto;
 }
 
 :root {
