@@ -98,8 +98,19 @@
 }
 
 .main-body {
-  max-width: 1496px;
-  margin:auto;
+  width: 100%;
+}
+
+.main-body > .block, .main-body > .main-hero {
+  margin: auto;
+}
+
+.main-body > .main-hero {
+  height: 650px;
+}
+
+.main-body > .block:has(.C6D5E8) {
+  background-color: #C6D5E8;
 }
 
 :root {
@@ -114,4 +125,6 @@
   --nav-font-weight-bold: 700;
 
   --product-list-font-size: var(--nav-font-size);
+
+  --main-body-width: 1496px;
 }

@@ -13,17 +13,16 @@ import { AppContext } from '../../utils/context';
 import './image.css';
 import { srcSet, sizes } from '../../utils/responsive-image';
 
-const imageUrl = (context, asset) => {
-  if(Object.keys(asset).includes('_dynamicUrl')) {
-    const url = context.serviceURL === context.defaultServiceURL || context.serviceURL.includes('publish-')? context.serviceURL.replace('author', 'publish') : context.serviceURL;  
-    return url.replace(/\/$/, '') + asset._dynamicUrl;
-  } else {  
-    return asset._authorUrl;
-  }
-};
-
 const Image = ({ asset, alt = 'WKND image', imageProps='', width, height, imageSizes }) => {
   const context = useContext(AppContext);
+  const { serviceURL } = context;
+  const imageUrl = () => {
+    if(Object.keys(asset).includes('_dynamicUrl')) {  
+      return serviceURL.replace(/\/$/, '') + asset._dynamicUrl;
+    } else {  
+      return serviceURL.replace(/\/$/, '') + asset._path;
+    }
+  };
 
   if(!asset) return (
     <picture>
@@ -31,16 +30,14 @@ const Image = ({ asset, alt = 'WKND image', imageProps='', width, height, imageS
     </picture>
   );
 
-  let src = context.default ? asset?._publishUrl : asset?._authorUrl;
   
   width = width || asset?.width || '';
   height = height || asset?.height || '';
 
-  src = imageUrl(context, asset);
-
+  
   return (
     <picture>
-      <img loading='lazy' alt={alt} src={src} width={width} height={height} srcSet={srcSet(src, imageSizes)} sizes={sizes(imageSizes)} {...imageProps}/>
+      <img loading='lazy' alt={alt} src={serviceURL.replace(/\/$/, '') + asset._path} width={width} height={height} srcSet={srcSet(imageUrl(), imageSizes)} sizes={sizes(imageSizes)} {...imageProps}/>
     </picture>
   );
 };

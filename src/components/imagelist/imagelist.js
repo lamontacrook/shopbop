@@ -38,15 +38,20 @@ const imageSizes = [
 
 const ImageList = ({ content, editorProps }) => {
   const imageProps = {
-    'data-aue-prop': 'asset',
+    'data-aue-prop': 'images',
     'data-aue-type': 'media',
-    'data-aue-label': 'Asset'
+    'data-aue-label': 'Asset',
+    'data-aue-behavior': 'component'
   };
 
+  editorProps['data-aue-behavior'] = 'container';
+
+  const imagelistClass = content.backgroundColor ? `imagelist ${content.backgroundColor}`: 'imagelist';
+  
   return (
-    <div className='imagelist' {...editorProps}>
+    <div className={imagelistClass}>
       {mapJsonRichText(content?.headline?.json)}
-      <span class='list-items'>
+      <span className='list-items' {...editorProps}>
         {content.images && content.images.map((image) => (
           <div key={image._path} className='list-item'>
             <Image imageProps={imageProps} asset={image} title={image.title} alt={image.description} imageSizes={imageSizes} />

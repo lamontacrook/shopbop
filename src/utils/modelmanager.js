@@ -10,15 +10,16 @@ export const componentMapping = {
   ProductList
 };
 
-const ModelManager = ({ content, dataAueProp }) => {
+const ModelManager = ({ content, dataAueProp, dataAueBehavior }) => {
   const { title } = content._model;
   const editorProps = {
     'data-aue-resource': `urn:aemconnection:${content._path}/jcr:content/data/${content._variation}`,
     'data-aue-type': 'reference',
     'data-aue-label': title,
     'data-aue-model': content?._model?._path,
-    'data-aue-behavior': 'component',
-    'data_aue-prop': dataAueProp
+    'data-aue-behavior': dataAueBehavior,
+    'data-aue-prop': dataAueProp,
+    'data-aue-filter': 'cf'
   };
   const Component = componentMapping[title.replace(' ', '')];
  
@@ -29,7 +30,8 @@ const ModelManager = ({ content, dataAueProp }) => {
 
 ModelManager.propTypes = {
   content: PropTypes.object,
-  dataAueProp: PropTypes.string
+  dataAueProp: PropTypes.string,
+  dataAueBehavior: PropTypes.string
 };
 
 export default ModelManager;

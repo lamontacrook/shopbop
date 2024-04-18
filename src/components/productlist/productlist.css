@@ -1,22 +1,24 @@
-.main-body > .productlist {
+.main-body > .block > .productlist {
   display: flex;
   flex-direction: column;
   padding: 34px 3% 48px;
   max-width: 1500px;
+  max-width: var(--main-body-width);
+  margin: auto;
 }
 
-.main-body > .productlist.highlighted-background {
+.main-body > .block > .productlist.highlighted-background {
   background-color: rgb(252, 242, 246);
 }
 
-.main-body > .productlist > .product-list-title {
+.main-body > .block > .productlist > .product-list-title {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 14px;
 }
 
-.main-body > .productlist > .product-list-title p {
+.main-body > .block > .productlist > .product-list-title p {
   font-family: "franklin gothic", sans-serif;
   font-weight: 700;
   font-size: 2rem;
@@ -24,7 +26,7 @@
   /* TODO: Figure out content fragment for section title/subtitle */
 }
 
-.main-body > .productlist > .product-list-title button {
+.main-body > .block > .productlist > .product-list-title button {
   color: rgb(238, 74, 27);
   font-size: 1rem;
   font-weight: 600;
@@ -36,18 +38,18 @@
   padding: 0;
 }
 
-.main-body > .productlist > .list-items {
+.main-body > .block > .productlist > .list-items {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
   grid-gap: 16px;
 }
 
-.main-body > .productlist > .list-items > .list-item {
+.main-body > .block > .productlist > .list-items > .list-item {
   display: flex;
   flex-direction: column;
 }
 
-.main-body > .productlist > .list-items > .list-item .product-favorite {
+.main-body > .block > .productlist > .list-items > .list-item .product-favorite {
   position: absolute;
   width: 44px;
   height: 44px;
@@ -60,7 +62,7 @@
   justify-content: space-around;
 }
 
-.main-body > .productlist > .list-items > .list-item .product-favorite::before {
+.main-body > .block > .productlist > .list-items > .list-item .product-favorite::before {
   display: block;
   content: "";
   width: 20px;
@@ -71,15 +73,15 @@
   background-image: url('../../media/heart.svg');
 }
 
-.main-body > .productlist > .list-items > .list-item .list-item-content {
+.main-body > .block > .productlist > .list-items > .list-item .list-item-content {
   display: flex;
   flex-direction: column;
   padding: 14px 0 6px;
   position: relative;
 }
 
-.main-body > .productlist > .list-items > .list-item .product-name,
-.main-body > .productlist > .list-items > .list-item .product-price
+.main-body > .block > .productlist > .list-items > .list-item .product-name,
+.main-body > .block > .productlist > .list-items > .list-item .product-price
  {
   font-family: "franklin gothic", sans-serif;
   font-weight: 600;
@@ -89,7 +91,7 @@
   padding: 0 7.5%;
 }
 
-.main-body > .productlist > .list-items > .list-item .product-description {
+.main-body > .block > .productlist > .list-items > .list-item .product-description {
   font-family: "franklin gothic", sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
