@@ -4,7 +4,7 @@
   align-items: center;
   padding: 30px 40px;
   max-width: 1375px;
-  width: calc(100vw - 80px);
+  width: auto;
 }
 
 .main-body > .imagelist h3 {
