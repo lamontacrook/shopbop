@@ -14,6 +14,13 @@
     width: 100%;
 }
 
+@media only screen and (max-width: 768px) { 
+    .footer-content-wrapper > .footer-navigation {
+		grid-template-columns: unset;
+        grid-gap: 30px;
+	}
+}
+
 .footer-content-wrapper > .footer-navigation h3 {
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -56,7 +63,7 @@
 }
 
 .footer-content-wrapper > .footer-copyright {
-    padding: 40px 20px 20px;
+    padding: 50px 20px 20px;
     font-size: 0.75rem;
 }
 

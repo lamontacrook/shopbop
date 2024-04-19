@@ -9,6 +9,7 @@ header>nav ul>li>h4 {
   font-weight: var(--nav-font-weight);
   transition: font-weight 225ms ease-in-out 0s;
   color: rgb(0, 0, 0);
+  margin: .5rem .1rem;
 }
 
 header>nav ul>li>h4 a::before {
