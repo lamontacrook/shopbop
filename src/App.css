@@ -163,7 +163,7 @@
   }
 }
 
-.main-body {
-  max-width: 1480px;
-  margin: auto;
+.main-body > div:not(.banner, .fifty-fifty, .teaser) {
+  max-width: 1440px;
+  margin: 0 auto;
 }
