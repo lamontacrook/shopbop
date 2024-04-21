@@ -1,0 +1,81 @@
+.coll-carousel {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.coll-carousel h2 {
+  text-align: left;
+}
+
+.coll-carousel .slick-slide img {
+  max-height: 550px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.coll-carousel .slick-slide > div {
+  margin: 0 10px;
+}
+
+.coll-carousel .slick-list {
+  margin: 0 -10px;
+}
+
+.coll-carousel .slick-slide .carousel-item:focus-visible {
+  outline: none;
+}
+
+.coll-carousel .slick-slide .carousel-item h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.coll-carousel .slick-slide .carousel-item p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.coll-carousel .slick-slide .carousel-item a {
+  padding-left: .8125rem;
+  padding-right: .8125rem;
+  white-space: normal;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  background-image: none;
+  border-color: var(--color-black);
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0.75rem 3rem;
+  font-size: 0.75rem;
+  border-radius: 3.125rem;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.coll-carousel .slick-arrow {
+  background-color: var(--color-white);
+  z-index: 1;
+  height: 75px;
+  width: 40px;
+  opacity: 0.4;
+}
+
+.coll-carousel .slick-arrow::before {
+  color: var(--color-black);
+}
+
+.coll-carousel .slick-arrow:hover {
+  opacity: 0.8;
+}
+
+.coll-carousel .slick-arrow.slick-prev {
+  left: -1px;
+}
+
+.coll-carousel .slick-arrow.slick-next {
+  right: -1px;
+}

@@ -43,17 +43,19 @@ const Screen = () => {
       </header>
 
       {data && data.screenList.items.map((item) => (
-        <div key={item.path} className='main-body' {...editorProps}
+        <div key={item.path} className='main-body'
+          data-aue-type='container'
+          data-aue-filter='screen'
           data-aue-label={item._model.title}
           data-aue-model={item._model._path}
           data-aue-resource={`urn:aemconnection:${item._path}/jcr:content/data/${item._variation}`}>
           <div className='main-hero'>
-            <ModelManager key={item.path} content={item.hero} dataAueProp='hero' dataAueBehavior=''></ModelManager>
+            <ModelManager key={item.path} content={item.hero} dataProp='hero' dataBehavior=''></ModelManager>
           </div>
-          {item && item.blocks.map((block) => (
+          {item && item.blocks.map((block, i) => (
             <Delayed key={block._path} waitBeforeShow={200}>
               <div className='block'>
-                <ModelManager dataAueProp='block' content={block} dataAueBehavior='component'></ModelManager>
+                <ModelManager content={block} dataProp='block' dataBehavior='component'></ModelManager>
               </div>
             </Delayed>
           ))}
