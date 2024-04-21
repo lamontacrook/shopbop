@@ -19,6 +19,8 @@ export function useGraphQL(path, params = {}) {
 
   let [data, setData] = useState(null);
   let [errorMessage, setErrors] = useState(null);
+  context.serviceURL.includes('author') && (params['timestamp'] = new Date().getTime());
+
   useEffect(() => {
     function makeRequest() {
       const sdk = new AEMHeadless({

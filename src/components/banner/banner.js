@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Image from '../image';
+import Video from '../video/video';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../utils/context';
 import './banner.css';
@@ -36,16 +37,23 @@ const imageSizes = [
 ];
 
 const Banner = ({ content, editorProps }) => {
-  const imageProps = {
-    'data-aue-prop':'asset',
-    'data-aue-type':'media',
-    'data-aue-label':'Asset'
+  const renderAsset = ({ asset }) => {
+    const imageProps = {
+      'data-aue-prop': 'asset',
+      'data-aue-type': 'media',
+      'data-aue-label': 'Asset'
+    };
+    if (asset && Object.prototype.hasOwnProperty.call(content.asset, 'format'))
+      return (<Video content={content.asset} imageProps={imageProps} />);
+    else
+      return (<Image imageProps={imageProps} asset={content.asset} alt={content.title} imageSizes={imageSizes} />);
   };
 
-  console.log(editorProps);
+  const bannerClass = content.backgroundColor ? `banner ${content.backgroundColor}`: 'banner';
+
   return (
-    <div className='banner' {...editorProps}>
-      <Image imageProps={imageProps} asset={content.asset} alt={content.title} imageSizes={imageSizes} />  
+    <div className={bannerClass} {...editorProps}>
+      {renderAsset(content)}
     </div>
   );
 };

@@ -1,32 +1,34 @@
-.main-body > .imagelist {
+.main-body > .block > .imagelist {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px 40px;
   max-width: 1375px;
   width: calc(100vw - 80px);
+  max-width: var(--main-body-width);
+  margin: auto;
 }
 
-.main-body > .imagelist h3 {
+.main-body > .block > .imagelist h3 {
   font-family: "franklin gothic", sans-serif;
   font-weight: 700;
   font-size: 2rem;
   margin: 30px 0;
 }
 
-.main-body > .imagelist > .list-items {
+.main-body > .block > .imagelist > .list-items {
   display: flex;
   width: 100%;
   overflow-x: scroll;
 }
 
-.main-body > .imagelist > .list-items > .list-item {
+.main-body > .block > .imagelist > .list-items > .list-item {
   max-width: 320px;
   min-width: 320px;
   margin-right: 5px;
 }
 
-.main-body > .imagelist > .list-items > .list-item img {
+.main-body > .block > .imagelist > .list-items > .list-item img {
   width: 100%;
   height: auto;
 }

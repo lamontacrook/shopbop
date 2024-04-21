@@ -16,7 +16,7 @@ import './screen.css';
 const Screen = () => {
   const context = useContext(AppContext);
   const [title, setTitle] = useState('');
- 
+
   const persistentQuery = 'screen';
 
   const { data, errorMessage } = useGraphQL(persistentQuery, { tags: 'shopbop:location/home' });
@@ -43,20 +43,26 @@ const Screen = () => {
       </header>
 
       {data && data.screenList.items.map((item) => (
-        <div key={item.path} className='main-body' {...editorProps} 
-          data-aue-label={item._model.title} 
+        <div key={item.path} className='main-body'
+          data-aue-type='container'
+          data-aue-filter='screen'
+          data-aue-label={item._model.title}
           data-aue-model={item._model._path}
           data-aue-resource={`urn:aemconnection:${item._path}/jcr:content/data/${item._variation}`}>
-          <ModelManager key={item.path} content={item.hero} dataAueProp='hero'></ModelManager>
-          {item && item.blocks.map((block) => (
+          <div className='main-hero'>
+            <ModelManager key={item.path} content={item.hero} dataProp='hero' dataBehavior=''></ModelManager>
+          </div>
+          {item && item.blocks.map((block, i) => (
             <Delayed key={block._path} waitBeforeShow={200}>
-              <ModelManager dataAueProp='block' content={block}></ModelManager>
+              <div className='block'>
+                <ModelManager content={block} dataProp='block' dataBehavior='component'></ModelManager>
+              </div>
             </Delayed>
           ))}
         </div>
       ))}
       <footer>
-        <Footer key='footer'/>
+        <Footer key='footer' />
       </footer>
     </React.Fragment>
   );

@@ -1,0 +1,51 @@
+{
+  "groups": [
+    {
+      "title": "Content Fragments",
+      "id": "content-fragments",
+      "components": [
+        {
+          "title": "Teaser",
+          "id": "teaser",
+          "plugins": {
+            "aem": {
+              "cf": {
+                "name": "teaser",
+                "cfModel": "/conf/headless/settings/dam/cfm/models/teaser",
+                "cfFolder": "/content/dam/amazon/site/en/",
+                "title": "Teaser",
+                "description": "Teaser Content Fragment",
+                "template": {
+                  "asset": "/content/dam/headless-retail/assets/hero-banner.png",
+                  "title": "The title",
+                  "style": "hero",
+                  "description": "this is the description"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Carousel Item",
+          "id": "carousel-item",
+          "plugins": {
+            "aem": {
+              "cf": {
+                "name": "carousel-item",
+                "cfModel": "/conf/headless/settings/dam/cfm/models/carousel-item",
+                "cfFolder": "/content/dam/amazon/site/en/",
+                "title": "Carousel Item",
+                "description": "Carousel Item Description",
+                "template": {
+                  "asset": "/content/dam/amazon/assets/sb_20240415_hp_card_visnav_WAYLF_01._QL90_UX373_.jpg",
+                  "title": "The title",
+                  "description": "this is the description"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
