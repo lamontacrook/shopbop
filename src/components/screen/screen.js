@@ -48,7 +48,6 @@ const Screen = () => {
           data-aue-filter='screen'
           data-aue-label={item._model.title}
           data-aue-model={item._model._path}
-          data-aue-prop='block'
           data-aue-resource={`urn:aemconnection:${item._path}/jcr:content/data/${item._variation}`}>
           <div className='main-hero'>
             <ModelManager key={item.path} content={item.hero} dataProp='hero' dataBehavior=''></ModelManager>
