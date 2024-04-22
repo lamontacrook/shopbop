@@ -4,7 +4,7 @@ import Banner from '../components/banner/';
 import ImageList from '../components/imagelist';
 import ProductList from '../components/productlist';
 import CollectionsCarousel from '../components/collections-carousel';
-import CardsContainer from '../components/cards-container/cards-container';
+import CardsContainer from '../components/cards-container';
 //import Teaser from '../components/teaser';
 
 export const componentMapping = {
