@@ -3,7 +3,7 @@ import BrokenImage from '../media/broken.jpg';
 
 const defaultEndpoint = 'headless';
 const defaultProject = '/content/dam/amazon';
-const defaultServiceURL = 'https://author-p124331-e1227315.adobeaemcloud.com/';
+const defaultServiceURL = 'https://author-p124903-e1228403.adobeaemcloud.com/';
 
 export const AppContext = createContext({
   endpoint: localStorage.endpoint || defaultEndpoint,

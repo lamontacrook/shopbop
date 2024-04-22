@@ -46,7 +46,10 @@ const ImageList = ({ content, editorProps }) => {
     'data-aue-behavior': 'component'
   };
 
-  editorProps['data-aue-behavior'] = 'container';
+  editorProps['data-aue-behavior'] = 'component';
+  editorProps['data-aue-type'] = 'container';
+  editorProps['data-aue-prop'] = 'images';
+  editorProps['data-aue-filter'] = 'container-filter';
 
   const imagelistClass = content.backgroundColor ? `imagelist ${content.backgroundColor}`: 'imagelist';
   
