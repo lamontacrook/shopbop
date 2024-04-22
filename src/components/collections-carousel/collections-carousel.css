@@ -79,3 +79,56 @@
 .coll-carousel .slick-arrow.slick-next {
   right: -1px;
 }
+
+/* Static Carousel */
+.coll-carousel.static {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.coll-carousel.static > h2 {
+  font-size: 16px;
+  margin: 0;
+  padding: .25rem;
+}
+.coll-carousel.static > h3 {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0;
+  padding: .25rem;
+}
+
+.coll-carousel.static .carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) { 
+  .coll-carousel.static .carousel {
+		flex-direction: column;
+	}
+}
+
+.coll-carousel.static .carousel-item {
+  flex: 1;
+}
+
+.coll-carousel.static .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.coll-carousel.static .carousel-item h3 {
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+}
