@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../../utils/context';
 import { useGraphQL } from '../../utils/useGraphQL';
 import Loading from '../loading';
 import Panel from '../panel';
@@ -7,11 +8,12 @@ import Search from '../../media/search.svg';
 import './navigation.css';
 
 const Navigation = () => {
+  const context = useContext(AppContext);
   const [panel, setPanel] = useState(null);
   const [style, setStyle] = useState('');
   
   const persistentQuery = 'navigation';
-  const { data, errorMessage } = useGraphQL(persistentQuery);
+  const { data, errorMessage } = useGraphQL(persistentQuery, { locale: context.lang });
 
   if (errorMessage) return;
 

@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../image';
-import { Link } from 'react-router-dom';
-import { AppContext } from '../../utils/context';
 import { mapJsonRichText } from '../../utils/renderRichText';
 import './imagelist.css';
-
-import CardsContainer from '../cards-container/cards-container';
 
 const imageSizes = [
   {
@@ -47,29 +43,23 @@ const ImageList = ({ content, editorProps }) => {
   };
 
   editorProps['data-aue-behavior'] = 'component';
-  editorProps['data-aue-type'] = 'container';
+  editorProps['data-aue-type'] = 'reference';
   editorProps['data-aue-prop'] = 'images';
-  editorProps['data-aue-filter'] = 'container-filter';
+  editorProps['data-aue-filter'] = 'cf';
 
-  const imagelistClass = content.backgroundColor ? `imagelist ${content.backgroundColor}`: 'imagelist';
-  
+  const imagelistClass = content.backgroundColor ? `imagelist ${content.backgroundColor}` : 'imagelist';
+
   return (
-    <>
-      {/*  Remove later */}
-      <CardsContainer />
-      {/*  Remove later */}
-
-      <div className={imagelistClass}>
-        {mapJsonRichText(content?.headline?.json)}
-        <span className='list-items' {...editorProps}>
-          {content.images && content.images.map((image) => (
-            <div key={image._path} className='list-item'>
-              <Image imageProps={imageProps} asset={image} title={image.title} alt={image.description} imageSizes={imageSizes} />
-            </div>
-          ))}
-        </span>
-      </div>
-    </>
+    <div className={imagelistClass}>
+      {mapJsonRichText(content?.headline?.json)}
+      <span className='list-items' {...editorProps}>
+        {content.images && content.images.map((image) => (
+          <div key={image._path} className='list-item'>
+            <Image imageProps={imageProps} asset={image} title={image.title} alt={image.description} imageSizes={imageSizes} />
+          </div>
+        ))}
+      </span>
+    </div>
   );
 };
 

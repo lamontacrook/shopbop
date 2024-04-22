@@ -34,7 +34,7 @@ const imageSizes = [
   }
 ];
 
-const CollectionsCarousel = ({ content, config, editorProps, component = true }) => {
+const CollectionsCarousel = ({ content, config, editorProps }) => {
   const imageProps = {
     'data-aue-prop': 'asset',
     'data-aue-type': 'media',
@@ -42,7 +42,7 @@ const CollectionsCarousel = ({ content, config, editorProps, component = true })
   };
 
   editorProps['data-aue-type'] = 'container';
-  editorProps['data-aue-filter'] = 'container-filter';
+  editorProps['data-aue-filter'] = 'carousel-collection';
   editorProps['data-aue-prop'] = 'collectionItems';
 
   if (content.style === 'slider') return <SliderCarousel content={content} config={config} imageProps={imageProps} />;
@@ -77,8 +77,8 @@ StaticCarousel.propTypes = {
   editorProps: PropTypes.object
 };
 
-const SliderCarousel = ({ content, imageProps, config, editorProps }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+const SliderCarousel = ({ content, editorProps }) => {
+  const [setCurrentSlide] = useState(0);
   const settings = {
     dots: false,
     infinite: true,
@@ -125,8 +125,6 @@ const CarouselItem = ({ content, editorProps }) => {
   editorProps['data-aue-behavior'] = 'component';
   editorProps['data-aue-prop'] = 'collectionItems';
   editorProps['data-aue-filter'] = '';
-  
-  console.log(content);
 
   return (
     <div className="carousel-item" {...editorProps}>

@@ -1,10 +1,20 @@
 [
    {
-    "id": "screen",
-     "components": ["teaser"]
+      "id": "screen",
+      "components": [
+         "teaser"
+      ]
    },
    {
-    "id":"carousel-collection",
-    "components":["carousel-item"]
+      "id": "carousel-collection",
+      "components": [
+         "carousel-item"
+      ]
+   },
+   {
+      "id": "cards-collection",
+      "components": [
+         "card"
+      ]
    }
 ]

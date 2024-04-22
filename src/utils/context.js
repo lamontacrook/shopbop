@@ -11,5 +11,7 @@ export const AppContext = createContext({
   serviceURL: localStorage.serviceURL || defaultServiceURL,
   commerceSheet: '',
   panels: {},
-  navigation: {}
+  navigation: {},
+  lang: localStorage.lang || 'en',
+  brokenImage: BrokenImage
 });
