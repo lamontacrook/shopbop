@@ -44,6 +44,24 @@
               }
             }
           }
+        },
+        {
+          "title": "Asset Item",
+          "id": "asset-item",
+          "plugins": {
+            "aem": {
+              "cf": {
+                "name": "asset-item",
+                "cfModel": "/conf/headless/settings/dam/cfm/models/image-list",
+                "cfFolder": "/content/dam/amazon/site/en/",
+                "title": "Image List",
+                "description": "Image List Description",
+                "template": {
+                  "asset": "/content/dam/amazon/assets/sb_20240415_hp_card_visnav_WAYLF_01._QL90_UX373_.jpg"
+                }
+              }
+            }
+          }
         }
       ]
     }

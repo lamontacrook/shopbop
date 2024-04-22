@@ -42,6 +42,8 @@ const CollectionsCarousel = ({ content, config, editorProps, component = true })
   };
 
   editorProps['data-aue-type'] = 'container';
+  editorProps['data-aue-filter'] = 'container-filter';
+  editorProps['data-aue-prop'] = 'collectionItems';
 
   if (content.style === 'slider') return <SliderCarousel content={content} config={config} imageProps={imageProps} />;
   else return <StaticCarousel editorProps={editorProps} content={content} config={config} imageProps={imageProps} />;
@@ -56,7 +58,8 @@ CollectionsCarousel.propTypes = {
 };
 
 const StaticCarousel = ({ content, editorProps }) => {
-  editorProps['data-aue-prop'] = 'collectionItems';
+  editorProps['data-aue-resource'] = `urn:aemconnection:${content._path}/jcr:content/data/${content._variation}`;
+  
   return (
     <div className='coll-carousel static' {...editorProps}>
       {mapJsonRichText(content.head.json)}
@@ -121,6 +124,7 @@ const CarouselItem = ({ content, editorProps }) => {
   editorProps['data-aue-model'] = content?._model?._path;
   editorProps['data-aue-behavior'] = 'component';
   editorProps['data-aue-prop'] = 'collectionItems';
+  editorProps['data-aue-filter'] = '';
   
   console.log(content);
 
