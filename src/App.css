@@ -1,3 +1,129 @@
+:root {
+  --font-family: GTAmerica, "Helvetica Neue", Helvetica, sans-serif;
+
+  /* navigation */
+  --nav-font-family: var(--font-family);
+  --nav-font-size: 14px;
+  --nav-line-height: 1.285;
+  --nav-font-weight: 300;
+  --nav-font-weight-bold: 700;
+  --nav-height: 62px;
+
+  /* colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #666;
+  --color-red: #EE4A1B;
+
+  /* background color */
+  --background-white: #fff;
+  --background-grey: #eaebed;
+  --background-red: #9c183d;
+  --background-dark-blue: #0e223f;
+  
+  /* hover */
+  --hover-bg-grey: #ccc;
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-Light"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-LightItalic"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light-Italic.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light-Italic.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light-Italic.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Light-Italic.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: italic
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-Medium"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium.eot") format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-MediumItalic"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium-Italic.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium-Italic.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium-Italic.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Medium-Italic.eot") format("embedded-opentype");
+  font-weight: 500;
+  font-style: italic
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-Bold"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold.eot") format("embedded-opentype");
+  font-weight: bold;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-BoldItalic"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold-Italic.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold-Italic.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold-Italic.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Bold-Italic.eot") format("embedded-opentype");
+  font-weight: bold;
+  font-style: italic
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-Black"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black.eot") format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'GT-America-Standard';
+  src: local("GTAmerica-BoldBlackItalic"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black-Italic.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black-Italic.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black-Italic.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Standard-Black-Italic.eot") format("embedded-opentype");
+  font-weight: 900;
+  font-style: italic
+}
+
+@font-face {
+  font-family: 'GT-America-Standard-Condensed';
+  src: local("GTAmerica-CondensedBold"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Condensed-Bold.woff2") format("woff2"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Condensed-Bold.woff") format("woff"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Condensed-Bold.ttf") format("truetype"), 
+  url("https://m.media-amazon.com/images/S/shopbop-prod-fonts/GT-America-Condensed-Bold.eot") format("embedded-opentype");
+  font-weight: bold;
+  font-style: normal
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +161,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-body > div:not(.banner, .fifty-fifty, .teaser) {
+  max-width: 1440px;
+  margin: 0 auto;
 }

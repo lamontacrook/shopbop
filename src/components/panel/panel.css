@@ -2,18 +2,22 @@ header > nav > .panel {
   position: absolute;
   background-color: #F8F7F7;
   width: 100%;
-  margin-top: -26px;
+  margin-top: 0;
   display: none;
+  padding: 1rem 0;
 }
 
 header > nav > .panel.show {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 header > nav > .panel span {
   display: flex;
   flex-direction: row;
+  gap: 15px;
 }
 
 header > nav > .panel ul {
@@ -21,6 +25,17 @@ header > nav > .panel ul {
   flex-direction: column;
   text-align: left;
 }
+
+header > nav > .panel .panel-left,
+header > nav > .panel .panel-right {
+  padding: 0 1rem;
+}
+
+header > nav > .panel .panel-left > span,
+header > nav > .panel .panel-right > span {
+  padding: 1rem 0;
+}
+
 
 header > nav > .panel li > b, header > nav > .panel li > a {
   font-family: var(--nav-font-family);
