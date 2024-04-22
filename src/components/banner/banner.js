@@ -44,7 +44,7 @@ const Banner = ({ content, editorProps }) => {
       'data-aue-label': 'Asset'
     };
     if (asset && Object.prototype.hasOwnProperty.call(content.asset, 'format'))
-      return (<Video content={content.asset} imageProps={imageProps} />);
+      return (<Video content={content.asset} imageProps={imageProps} test='test'/>);
     else
       return (<Image imageProps={imageProps} asset={content.asset} alt={content.title} imageSizes={imageSizes} />);
   };
