@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import ModelManager from '../../utils/modelmanager';
 import PropTypes from 'prop-types';
-import { useErrorHandler } from 'react-error-boundary';
 import { AppContext } from '../../utils/context';
 import { Helmet } from 'react-helmet-async';
 import Delayed from '../../utils/delayed';
@@ -10,27 +9,19 @@ import Navigation from '../navigation';
 import Footer from '../footer';
 import { useGraphQL } from '../../utils/useGraphQL';
 import Loading from '../loading';
-import Banner from '../../components/banner';
 import './screen.css';
 
 const Screen = () => {
   const context = useContext(AppContext);
-  const [title, setTitle] = useState('');
+  const [title] = useState('');
 
   const persistentQuery = 'screen';
 
-  const { data, errorMessage } = useGraphQL(persistentQuery, { tags: 'shopbop:location/home' });
+  const { data, errorMessage } = useGraphQL(persistentQuery, { tags: 'shopbop:location/home', locale: context.lang });
 
   if (errorMessage) return;
 
   if (!data) return <Loading />;
-
-  let i = 0;
-
-  const editorProps = {
-    'data-aue-type': 'container',
-    'data-aue-filter': 'screen',
-  };
 
   return (
     <React.Fragment>
@@ -45,15 +36,17 @@ const Screen = () => {
       {data && data.screenList.items.map((item) => (
         <div key={item.path} className='main-body'
           data-aue-type='container'
+          data-aue-behavior='component'
           data-aue-filter='screen'
           data-aue-label={item._model.title}
           data-aue-model={item._model._path}
+          data-aue-prop='block'
           data-aue-resource={`urn:aemconnection:${item._path}/jcr:content/data/${item._variation}`}>
           <div className='main-hero'>
             <ModelManager key={item.path} content={item.hero} dataProp='hero' dataBehavior=''></ModelManager>
           </div>
           {item && item.blocks.map((block, i) => (
-            <Delayed key={block._path} waitBeforeShow={200}>
+            <Delayed key={block._path + '_' + i} waitBeforeShow={200}>
               <div className='block'>
                 <ModelManager content={block} dataProp='block' dataBehavior='component'></ModelManager>
               </div>
