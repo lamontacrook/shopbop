@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import ModelManager from '../../utils/modelmanager';
 import PropTypes from 'prop-types';
 import { AppContext } from '../../utils/context';
@@ -11,8 +12,11 @@ import { useGraphQL } from '../../utils/useGraphQL';
 import Loading from '../loading';
 import './screen.css';
 
-const Screen = () => {
+const Screen = (props) => {
+  const {lang} = useParams();
   const context = useContext(AppContext);
+  if(lang) context.lang = lang;
+  
   const [title] = useState('');
 
   const persistentQuery = 'screen';

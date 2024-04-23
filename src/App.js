@@ -35,7 +35,7 @@ function App() {
         </Helmet>
         <BrowserRouter>
           <Routes>
-            <Route exact={true} path={'/'} element={
+            <Route exact={true} path={'/:lang?'} element={
               <ErrorBoundary
                 FallbackComponent={Error}
                 onReset={() => {
