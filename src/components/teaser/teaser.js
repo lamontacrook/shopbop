@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Video from '../video';
 import Image from '../image';
+import { mapJsonRichText } from '../../utils/renderRichText';
 import { AppContext } from '../../utils/context';
 import './teaser.css';
 
@@ -87,17 +88,17 @@ const Teaser = ({ content, component = true }) => {
         <div className='content-container'>
           <div className='content-column'>
             <div className='main-content'>
-              {content.title && content.style === 'hero' && (
-                <h1 data-aue-prop='title' data-aue-type='text' data-aue-label='Title'>{content.title}</h1>
-              )}
-              {content.preTitle && content.style === 'featured' && (
+              {content.preTitle && (
                 <h5 data-aue-prop='preTitle' data-aue-type='text' data-aue-label='Pre-Title'>{content.preTitle}</h5>
               )}
-              {content.description && (
-                <p data-aue-prop='description' data-aue-type='text' data-aue-label='Description'>{content.description.plaintext}</p>
+              {content.title && content.style === 'hero' && (
+                <h3 data-aue-prop='title' data-aue-type='text' data-aue-label='Title'>{content.title}</h3>
               )}
-              {content.callToAction && content.link && (
-                <a href='#'>{content.callToAction}</a>
+              {content.description && (
+                <p data-aue-prop='description' data-aue-type='text' data-aue-label='Description' className='description'>{mapJsonRichText(content.description.json)}</p>
+              )}
+              {content.callToAction && (
+                <div className='button-container'><a href='#' className='button'>{content.callToAction}</a></div>
               )} </div>
           </div>
         </div>

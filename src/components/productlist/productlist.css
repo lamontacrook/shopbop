@@ -91,6 +91,10 @@
   padding: 0 7.5%;
 }
 
+.block > .productlist > .list-items > .list-item .product-price::before {
+  content: '$';
+}
+
 .main-body > .block > .productlist > .list-items > .list-item .product-description {
   font-family: "franklin gothic", sans-serif;
   font-weight: 400;

@@ -1,6 +1,6 @@
 .teaser.hero {
   width: 100%;
-  height: auto;
+  height: 638px;
   min-width: 10px;
   min-height: 10px;
   display: block;
@@ -35,26 +35,63 @@
 
 .teaser.hero .wrapper .main-content {
   width: auto;
-  max-width: 500px;
-  text-align: left;
+  max-width: 430px;
+  text-align: center;
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 8rem;
   padding-left: 3rem;
-  color: var(--color-white);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.teaser.hero .wrapper .main-content .button {
+  background-color: rgb(238, 74, 27);
+  font-weight: normal;
+  border: none;
+  padding: 18px 40px;
+  color: rgb(255, 255, 255) !important;
+  width: 154px;
+  margin-top: 20px;
+}
+
+.teaser.hero .wrapper .main-content .button-container {
+  
 }
 
 .teaser.hero .main-content h1 {
+  color: black;
   font-size: 80px;
   line-height: normal;
   margin-bottom: 0;
+  margin: unset;
+}
+
+.teaser.hero .main-content h3 {
+  color: black;
+  font-size: 50px;
+  line-height: 56px;
+  margin: unset;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.teaser.hero .main-content h5 {
+  color: black;
+  font-size: 16px;
+  line-height: 19px;
+  margin: unset;
+  margin-bottom: 10px;
 }
 
 .teaser.hero .main-content p {
-  width: 75%;
+  color: black;
   margin: 0;
+  margin-bottom: 24px;
 }
 
 .teaser.hero .main-content .teaser-cta-link {
@@ -77,4 +114,8 @@
 .teaser.hero .main-content .teaser-cta-link:hover {
   background-color: var(--hover-bg-grey);
   border: var(--hover-bg-grey);
+}
+
+.teaser.hero .main-content .button-container > a {
+  text-decoration: none;
 }
