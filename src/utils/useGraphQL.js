@@ -16,19 +16,19 @@ const { AEMHeadless } = require('@adobe/aem-headless-client-js');
  */
 export function useGraphQL(path, params = {}) {
   const context = useContext(AppContext);
-
   let [data, setData] = useState(null);
   let [errorMessage, setErrors] = useState(null);
   context.serviceURL.includes('author') && (params['timestamp'] = new Date().getTime());
-
+  
   useEffect(() => {
+
     function makeRequest() {
       const sdk = new AEMHeadless({
         serviceURL: context.serviceURL,
         endpoint: '/content/_cq_graphql/headless/endpoint.json'
       });
       const request = sdk.runPersistedQuery.bind(sdk);
-
+      
       request(`headless/${path}`, params, { credentials: 'include' })
         .then(({ data, errors }) => {
           //If there are errors in the response set the error message
@@ -44,11 +44,13 @@ export function useGraphQL(path, params = {}) {
           setErrors(error);
         });
     }
-    
+    console.log(path);
     if (Object.prototype.hasOwnProperty.call(context, path) && Object.keys(context[path]).length > 0) {
       setData(context[path]);
-    } else
+    } else {
+      
       makeRequest();
+    }
 
   }, [path, context]);
 

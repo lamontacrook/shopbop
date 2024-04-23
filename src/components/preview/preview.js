@@ -11,30 +11,25 @@ const Preview = () => {
   const context = useContext(AppContext);
 
   const props = useParams();
+  const param = props['*'];
+  
+  const slash = param.indexOf('/');
+  const persistentQuery = param.slice(0, slash);
+  const pth = param.slice(slash);
 
-  const persistentQuery = 'teaser';
-
-  const { data, errorMessage } = useGraphQL(persistentQuery, { path: '/content/dam/amazon/site/en/teaser-1' });
-  console.log(data);
-
-  const { item } = data.component;
+  const { data, errorMessage } = useGraphQL(persistentQuery, { path: pth });
+  //https://experience.adobe.com/#/@aemxscsandbox1/aem/editor/canvas/localhost:3000/preview/teaser/content/dam/amazon/site/en/teaser-1
 
   if (errorMessage) return;
 
+  let item = '';
   if (!data) return <Loading />;
+  else item = data.component.item;
 
   let i = 0;
 
   return (
-    <div key={item.path} className='main-body'
-      data-aue-type='container'
-      data-aue-behavior='component'
-      data-aue-filter='screen'
-      data-aue-label={item._model.title}
-      data-aue-model={item._model._path}
-      data-aue-prop='block'
-      data-aue-resource={`urn:aemconnection:${item._path}/jcr:content/data/${item._variation}`}>
-
+    <div key={item.path} className='main-body'>
       <div className='block'>
         <ModelManager content={item} dataProp='block' dataBehavior='component'></ModelManager>
       </div>
@@ -43,11 +38,7 @@ const Preview = () => {
 };
 
 Preview.propTypes = {
-  pos1: PropTypes.string,
-  pos2: PropTypes.string,
-  pos3: PropTypes.string,
-  location: PropTypes.object,
-  context: PropTypes.object
+  '*': PropTypes.object
 };
 
 export default Preview;

@@ -7,23 +7,23 @@ import Error from './components/error';
 import Screen from './components/screen';
 import { useGraphQL } from './utils/useGraphQL';
 import Loading from './components/loading';
-import Preview from './components/preview/preview';
+import Preview from './components/preview';
 
 import './App.css';
 
 function App() {
   const context = useContext(AppContext);
   const persistentQuery = 'configuration';
-  const { data, errorMessage } = useGraphQL(persistentQuery, { project: `${context.project}/configuration` });
+  // const { data, errorMessage } = useGraphQL(persistentQuery, { project: `${context.project}/configuration` });
 
-  if (errorMessage) throw new Error(errorMessage);
+  // if (errorMessage) throw new Error(errorMessage);
 
-  if (!data) return <Loading />;
+  // if (!data) return <Loading />;
 
 
-  if (data) {
-    context.commerceSheet = data.configurationByPath.item.commerceSheet;
-  }
+  // if (data) {
+  //   context.commerceSheet = data.configurationByPath.item.commerceSheet;
+  // }
 
   let {serviceURL} = context;
   serviceURL = serviceURL.endsWith('/') ? serviceURL.slice(0, -1) : serviceURL;
@@ -45,7 +45,7 @@ function App() {
                 <Screen />
               </ErrorBoundary>}>
             </Route>
-            <Route exact={true} path={'/preview'} element={
+            <Route exact={true} path={'/preview/*'} element={
               <ErrorBoundary
                 FallbackComponent={Error}
                 onReset={() => {
