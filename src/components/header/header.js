@@ -6,7 +6,7 @@ import './header.css';
 
 const Header = () => {
   const updateLang = (ev) => {
-    console.log(ev.target.textContent.toLowerCase());
+    
     if (ev.target.textContent.toLowerCase() === 'en')
       window.location = '/es/';
     else

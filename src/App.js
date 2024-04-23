@@ -7,6 +7,7 @@ import Error from './components/error';
 import Screen from './components/screen';
 import { useGraphQL } from './utils/useGraphQL';
 import Loading from './components/loading';
+import Preview from './components/preview/preview';
 
 import './App.css';
 
@@ -42,6 +43,15 @@ function App() {
                   console.log('reset');
                 }}>
                 <Screen />
+              </ErrorBoundary>}>
+            </Route>
+            <Route exact={true} path={'/preview'} element={
+              <ErrorBoundary
+                FallbackComponent={Error}
+                onReset={() => {
+                  console.log('reset');
+                }}>
+                <Preview />
               </ErrorBoundary>}>
             </Route>
           </Routes>
