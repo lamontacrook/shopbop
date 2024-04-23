@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { mapJsonRichText } from '../../utils/renderRichText';
+import { AppContext } from '../../utils/context';
 import './productlist.css';
 
 const imageSizes = [
@@ -34,6 +35,7 @@ const imageSizes = [
 ];
 
 const ProductList = ({ content, editorProps }) => {
+  const context = useContext(AppContext);
   const [products, setProducts] = useState(null);
 
   const imageProps = {
@@ -62,7 +64,7 @@ const ProductList = ({ content, editorProps }) => {
 
     return (
       <React.Fragment>
-        <img src={product.category_image} />
+        <img src={context.serviceURL + product.category_image} />
         <div className='list-item-content'> 
           <span className='product-name'>{product.product_name}</span>
           <span className='product-description'>{product.product_description}</span>
